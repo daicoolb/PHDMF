@@ -1,8 +1,9 @@
 python ./run.py \
--d ~/Desktop/CopeData/test_0717/ \
--a ~/Desktop/CopeData/test_0717/ \
+-d ~/CopeData/test_0720_0.4/ \
+-a ~/CopeData/test_0720_0.4/ \
 -c True \
--r ~/Desktop/RawData/ml-1m_ratings.dat \
--i ~/Desktop/RawData/ml_plot.dat \
--b ~/Desktop/RawData/user_side_information.dat \
+-t 0.6 \
+-r ~/RawData/ml-1m_ratings.dat \
+-i ~/RawData/ml_plot.dat \
+-b ~/RawData/user_side_information.dat \
 -m 1

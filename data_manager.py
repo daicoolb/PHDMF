@@ -431,7 +431,7 @@ class Data_Factory():
                 for i in xrange(len(tmp[1])):
                     tmp_list.append(int(tmp[1][i]))
                 user_side.append(tmp_list)
-                print tmp_list
+                #print tmp_list
         raw_side.close()
         S=csr_matrix(user_side)
         print "Valid User side information - # user: %d" % len(user_side)

@@ -73,6 +73,6 @@ class aSDAE_module():
 
         #aSDAE=sequence.pad_sequences(aSDAE,maxlen=self.maxlen)
         #train_user=sequence.pad_sequences(train_user,maxlen=self.maxfea)
-        middle=self.model.predict({'user_rating':aSDAE,'user_sideinformation':train_user},batch_size=self.batch_size)
+        middle=self.model.predict({'user_rating':aSDAE,'user_sideinformation':train_user},batch_size=self.batch_size)[2]
         
         return middle   
