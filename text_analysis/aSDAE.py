@@ -14,7 +14,7 @@ from keras import backend as K
 class aSDAE_module():
   
     batch_size=128
-    epochs=5
+    epochs=20
     
     def feature_loss(self,y_true,y_pred):
         return K.mean(K.square(y_true-y_pred),axis=-1)
@@ -63,7 +63,7 @@ class aSDAE_module():
         np.random.seed(seed)
         U=np.random.permutation(U)
         
-        print("Train... aSDAE model")
+        print("Train... aSDAE module")
         self.model.compile(optimizer='rmsprop',loss={'output_model_rating':'mse','output_model_side':'mse','user_matrix':'mse'},loss_weights=[1,1,1])
         history=self.model.fit({'user_rating':aSDAE,'user_sideinformation':train_user},{'output_model_rating':aSDAE,'output_model_side':train_user,'user_matrix':U},verbose=0,batch_size=self.batch_size,epochs=self.epochs)
     
@@ -75,4 +75,9 @@ class aSDAE_module():
         #train_user=sequence.pad_sequences(train_user,maxlen=self.maxfea)
         middle=self.model.predict({'user_rating':aSDAE,'user_sideinformation':train_user},batch_size=self.batch_size)[2]
         
-        return middle   
+        return middle
+    
+    def load_model(self, model_path):
+        self.model.load_weights(model_path)
+    def save_model(self, model_path, isoverwrite=True):
+        self.model.save_weights(model_path, isoverwrite)   
