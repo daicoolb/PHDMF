@@ -22,7 +22,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     a = 1
     b = 0
     aSDAE_encoder_dimension=100
-    user_feature=42
+    user_feature=47
  
     num_user = R.shape[0]
     num_item = R.shape[1]
@@ -51,7 +51,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
 
     alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())  
     np.random.seed(133)
-    V = np.random.uniform(size=(num_user, dimension))
+    V = np.random.uniform(size=(num_item, dimension))
     U = alpha
     #V = theta
 

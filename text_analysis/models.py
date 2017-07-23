@@ -21,7 +21,7 @@ class CNN_module():
     '''
     batch_size = 128
     # More than this epoch cause easily over-fitting on our data sets
-    nb_epoch = 5
+    nb_epoch = 3
 
     def __init__(self, output_dimesion, vocab_size, dropout_rate, emb_dim, max_len, nb_filters, init_W=None):
 

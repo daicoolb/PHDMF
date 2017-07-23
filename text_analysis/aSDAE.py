@@ -14,7 +14,7 @@ from keras import backend as K
 class aSDAE_module():
   
     batch_size=128
-    epochs=20
+    epochs=8
     
     def feature_loss(self,y_true,y_pred):
         return K.mean(K.square(y_true-y_pred),axis=-1)

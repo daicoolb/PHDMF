@@ -121,8 +121,10 @@ else:
     CNN_X = D_all['X_sequence']
     vocab_size = len(D_all['X_vocab']) + 1
 
-    #from models import PHDMF
-    from asdae_models import PHDMF
+    from models import PHDMF
+    #from asdae_models import PHDMF
+    #from cnn_models import PHDMF
+
     if pretrain_w2v is None:
         init_W = None
     else:

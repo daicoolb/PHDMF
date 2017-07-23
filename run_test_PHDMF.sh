@@ -1,8 +1,8 @@
 python ./run.py \
--d ../CopeData/test_0720_0.2/ \
--a ../CopeData/test_0720_0.2/ \
--o ../CopeData//test_0720_0.2/AE_Result \
+-d ../CopeData/test_0723_0.8/ \
+-a ../CopeData/test_0723_0.8/ \
+-o ../CopeData//test_0723_0.8/Result \
 -e 200 \
 -p ../glove.6B/glove.6B.200d.txt \
--u 10 \
--v 100 \
+-u 5 \
+-v 150 \
