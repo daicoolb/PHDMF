@@ -22,7 +22,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     a = 1
     b = 0
     aSDAE_encoder_dimension=100
-    user_feature=47
+    user_feature=42
  
     num_user = R.shape[0]
     num_item = R.shape[1]
