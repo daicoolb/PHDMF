@@ -108,7 +108,7 @@ else:
     if lambda_v is None:
         sys.exit("Argument missing - lambda_v is required")
 
-    print "===================================ConvMF Option Setting==================================="
+    print "===================================PHDMF Option Setting===================================="
     print "\taux path - %s" % aux_path
     print "\tdata path - %s" % data_path
     print "\tresult path - %s" % res_dir
@@ -121,8 +121,8 @@ else:
     CNN_X = D_all['X_sequence']
     vocab_size = len(D_all['X_vocab']) + 1
 
-    from models import PHDMF
-    #from asdae_models import PHDMF
+    #from models import PHDMF
+    from asdae_models import PHDMF
     #from cnn_models import PHDMF
 
     if pretrain_w2v is None:
