@@ -10,4 +10,4 @@ Note that this model can deal with three conditions:
 - only item side information 
 - user and item side information
 
-Tips：Please make sure you have a good deep learning environment to run these code.
+Tips：Please make sure you have a good deep learning environment to run these codes.
