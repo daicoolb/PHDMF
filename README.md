@@ -1,5 +1,5 @@
 # PHDMF
-This is a variant of ConvMF and aSDAE. Certainly, it is based on ConvMF.
+This is a variant of ConvMF and aSDAE. Certainly, it is based on [ConvMF](http://dm.postech.ac.kr/~cartopy/ConvMF/).
 
 We use aSDAE and CNN to generate the user latent factor and item latent factor, respectively.
 
