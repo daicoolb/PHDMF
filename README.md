@@ -6,8 +6,8 @@ We use aSDAE and CNN to generate the user latent factor and item latent factor, 
 If you want to use it, pleae install [keras](keras.io) and [tensorflow](http://tensorflow.org/) ,respectively.
 
 Note that this model can deal with three conditions: 
-- only user side information
-- only item side information 
-- user and item side information
+- only user side information (aSDAE model)
+- only item side information (ConvMF model)
+- user and item side information (PHD model)
 
 Tips：Please make sure you have a good deep learning environment to run these codes.
