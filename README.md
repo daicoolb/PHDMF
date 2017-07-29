@@ -1,5 +1,5 @@
 # PHDMF
-This A variant of ConvMF. Certainly, it is based ConvMF.
+This is a variant of ConvMF and aSDAE. Certainly, it is based ConvMF.
 We use aSDAE and CNN to generate the user latent factor and item latent factor, respectively.
 
 If you want to use it, pleae install keras and tensorflow ,respectively.
