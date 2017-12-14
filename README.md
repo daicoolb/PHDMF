@@ -1,5 +1,18 @@
 # PHDMF
 
+> Collaborative Filtering(CF), a well-known approach in producing recommender systems,
+has achieved wide use and excellent performance not only in research but also in industry.
+However, problems related to cold start and data sparsity have caused CF to attract an
+increasing amount of attention in eorts to solve these problems. Traditional approaches
+adopt side information to extract eective latent factors but still have some room for
+growth. Due to the strong characteristic of feature extraction in deep learning, many
+researchers have employed it with CF to extract eective representations and to enhance its
+performance in rating prediction. Based on this previous work, we propose a probabilistic
+model that combines a stacked denoising autoencoder and a convolutional neural network
+together with auxiliary side information (i.e, both from users and items) to extract users and
+items' latent factors, respectively. Extensive experiments for four datasets demonstrate that
+our proposed model outperforms other traditional approaches and deep learning models
+making it state of the art.
 ### 1 PHD Model
 ![PHD Model](https://github.com/daicoolb/PHDMF/blob/master/PHD.png)
 
