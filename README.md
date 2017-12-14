@@ -1,4 +1,11 @@
 # PHDMF
+
+![PHD Model](https://github.com/daicoolb/PHDMF/blob/master/PHD.png)
+
+![CNN model](https://github.com/daicoolb/PHDMF/blob/master/CNN.png)
+
+![aSDAE model](https://github.com/daicoolb/PHDMF/blob/master/aSDAE.png)
+
 This is a variant of ConvMF and aSDAE. Certainly, it is based on [ConvMF](http://dm.postech.ac.kr/~cartopy/ConvMF/) and [aSDAE](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14676/13916).
 
 We use aSDAE and CNN to generate the user latent factor and item latent factor, respectively.
