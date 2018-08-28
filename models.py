@@ -23,7 +23,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     b = 0
     aSDAE_encoder_dimension=100
     user_feature=47
- 
+
     num_user = R.shape[0]
     num_item = R.shape[1]
     PREV_LOSS = 1e-50
@@ -48,7 +48,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     cnn_module = CNN_module(dimension, vocab_size, dropout_rate,emb_dim, max_len, num_kernel_per_ws, init_W)
     theta = cnn_module.get_projection_layer(CNN_X)
     asdae_module = aSDAE_module(aSDAE_encoder_dimension,dimension,num_item,user_feature)
-    alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())  
+    alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())
     #np.random.seed(133)
     #U = np.random.uniform(size=(num_user, dimension))
     U = alpha

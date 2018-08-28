@@ -23,7 +23,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     b = 0
     aSDAE_encoder_dimension=100
     user_feature=42
- 
+
     num_user = R.shape[0]
     num_item = R.shape[1]
     PREV_LOSS = 1e-50
@@ -49,7 +49,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     #theta = cnn_module.get_projection_layer(CNN_X)
     asdae_module = aSDAE_module(aSDAE_encoder_dimension,dimension,num_item,user_feature)
 
-    alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())  
+    alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())
     np.random.seed(133)
     V = np.random.uniform(size=(num_item, dimension))
     U = alpha
@@ -94,8 +94,8 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
             B = (a * U_j * (np.tile(R_j, (dimension, 1)).T)
                  ).sum(0)
             V[j] = np.linalg.solve(A, B)
-            
-            sub_loss[j] = -0.5 * lambda_v * np.dot(V[j],V[j])        
+
+            sub_loss[j] = -0.5 * lambda_v * np.dot(V[j],V[j])
             sub_loss[j] = sub_loss[j] + -0.5 * np.square(R_j * a).sum()
             sub_loss[j] = sub_loss[j] + a * np.sum((U_j.dot(V[j])) * R_j)
             sub_loss[j] = sub_loss[j] - 0.5 * np.dot(V[j].dot(tmp_A), V[j])
