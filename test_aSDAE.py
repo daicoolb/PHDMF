@@ -3,7 +3,7 @@
 
 from text_analysis.aSDAE import aSDAE_module
 import numpy as np
-import cPickle as pickl
+import pickle as pickl
 import os        
 #num_item=1000
 #num_user=100
@@ -29,7 +29,7 @@ history=aSDAE_out.train(R.toarray(),S.toarray(),feature_1,112)
 
 module_output=aSDAE_out.get_middle_layer(R.toarray(),S.toarray())
 
-print "done"
+print("done")
 np.savetxt("./test/sdae_output.dat",module_output[0])
 np.savetxt("./test/train_user_output.dat",module_output[1])
 np.savetxt("./test/feature_output.dat",module_output[2])
