@@ -2,12 +2,22 @@
 Created on July 29, 2017
 @author: Beili
 '''
+
+from __future__ import print_function
+
+import sys
+
 import numpy as np
+
+if sys.version_info.major == 2:
+    range = xrange
+
+
 def eval_MAE(R, U, V, TS):
     num_user = U.shape[0]
     sub_mae = np.zeros(num_user)
     TS_count = 0
-    for i in xrange(num_user):
+    for i in range(num_user):
         idx_item = TS[i]
         if len(idx_item) == 0:
             continue
@@ -27,4 +37,4 @@ data_path='/home/daicoolb/CopeData/test_0723_0.8_100k'
 test_user=data_factory.read_rating(data_path+'/test_user.dat')
 U=np.loadtxt(data_path+'/Result/U.dat')
 V=np.loadtxt(data_path+'/Result/V.dat')
-print "MAE: %.5f \n " % eval_MAE(test_user[1],U,V,test_user[0])
+print("MAE: %.5f \n " % eval_MAE(test_user[1],U,V,test_user[0]))

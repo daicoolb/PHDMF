@@ -3,14 +3,20 @@ created on July 21, 2017
 @author: Beili
 '''
 
+from __future__ import print_function
+
 import os
 import time
+import sys
 
 from util import eval_RMSE
 import math
 import numpy as np
 from text_analysis.models import CNN_module
 from text_analysis.aSDAE import aSDAE_module
+
+if sys.version_info.major == 2:
+    range = xrange
 
 
 def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
@@ -22,7 +28,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     b = 0
     aSDAE_encoder_dimension=100
     user_feature=42
- 
+
     num_user = R.shape[0]
     num_item = R.shape[1]
     PREV_LOSS = 1e-50
@@ -47,7 +53,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     cnn_module = CNN_module(dimension, vocab_size, dropout_rate,emb_dim, max_len, num_kernel_per_ws, init_W)
     theta = cnn_module.get_projection_layer(CNN_X)
     #asdae_module = aSDAE_module(aSDAE_encoder_dimension,dimension,num_item,user_feature)
-    #alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())  
+    #alpha = asdae_module.get_middle_layer(R.toarray(),aSDAE.toarray())
     np.random.seed(133)
     U = np.random.uniform(size=(num_user, dimension))
     #U = alpha
@@ -55,15 +61,15 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
 
     endure_count = 5
     count = 0
-    for iteration in xrange(max_iter):
+    for iteration in range(max_iter):
         loss = 0
         tic = time.time()
-        print "%d iteration\t(patience: %d)" % (iteration, count)
+        print("%d iteration\t(patience: %d)" % (iteration, count))
 
         VV = b * (V.T.dot(V)) + lambda_u * np.eye(dimension)
         sub_loss = np.zeros(num_user)
 
-        for i in xrange(num_user):
+        for i in range(num_user):
             idx_item = train_user[0][i]
             V_i = V[idx_item]
             R_i = Train_R_I[i]
@@ -82,7 +88,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
 
         sub_loss = np.zeros(num_item)
         UU = b * (U.T.dot(U))
-        for j in xrange(num_item):
+        for j in range(num_item):
             idx_user = train_item[0][j]
             U_j = U[idx_user]
             R_j = Train_R_J[j]
@@ -125,8 +131,8 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
 
         pre_val_eval = val_eval
 
-        print "Loss: %.5f Elpased: %.4fs Converge: %.6f Tr: %.5f Val: %.5f Te: %.5f" % (
-            loss, elapsed, converge, tr_eval, val_eval, te_eval)
+        print("Loss: %.5f Elpased: %.4fs Converge: %.6f Tr: %.5f Val: %.5f Te: %.5f" % (
+            loss, elapsed, converge, tr_eval, val_eval, te_eval))
         f1.write("Loss: %.5f Elpased: %.4fs Converge: %.6f Tr: %.5f Val: %.5f Te: %.5f\n" % (
             loss, elapsed, converge, tr_eval, val_eval, te_eval))
 
