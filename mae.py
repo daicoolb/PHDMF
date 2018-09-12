@@ -2,7 +2,17 @@
 Created on July 29, 2017
 @author: Beili
 '''
+
+from __future__ import print_function
+
+import sys
+
 import numpy as np
+
+if sys.version_info.major == 2:
+    range = xrange
+
+
 def eval_MAE(R, U, V, TS):
     num_user = U.shape[0]
     sub_mae = np.zeros(num_user)

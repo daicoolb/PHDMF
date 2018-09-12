@@ -1,7 +1,16 @@
 #!/usr/bin/python
 #coding=utf-8
 
+from __future__ import print_function
+
+
+import sys
+
 import numpy as np
+
+if sys.version_info.major == 2:
+    range = xrange
+
 
 def eval_precision(U,V,TS,TN,VN,k):
     num_user=U.shape[0]
@@ -17,7 +26,7 @@ def eval_precision(U,V,TS,TN,VN,k):
             continue
         TS_count+=1
         item_candidate=set([ temp_i for temp_i in range(num_item)]) - set(idx_item)
-        R_i=U[i].dot(V[list(item_candidate)].T) 
+        R_i=U[i].dot(V[list(item_candidate)].T)
         temp_R_i=list(zip(R_i,list(item_candidate)))
         temp_R_i.sort(key=lambda x:x[0],reverse=True)
         predicated=[x[1] for x in temp_R_i]
@@ -54,4 +63,3 @@ def eval_recall(U,V,TS,TN,VN,k):
     print(TS_count)
     recall_k=result_sum/TS_count
     return recall_k
-

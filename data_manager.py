@@ -4,9 +4,10 @@ Created on July 14, 2017
 @author: Beili
 '''
 
+from __future__ import print_function
+
 import os
 import sys
-import pickle as pickl
 import numpy as np
 
 from operator import itemgetter
@@ -15,6 +16,13 @@ from scipy.sparse.csr import csr_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
 import random
+
+if sys.version_info.major == 2:
+    import cPickle as pickl
+    range = xrange
+
+else:
+    import pickle as pickl
 
 
 class Data_Factory():
@@ -112,7 +120,7 @@ class Data_Factory():
             np.random.shuffle(user_rating)
             train.append((i, user_rating[0]))
 
-        remain_item = set(range(R.shape[1])) - set(zip(*train)[1])
+        remain_item = set(range(R.shape[1])) - set(list(zip(*train))[1])
 
         for j in remain_item:
             item_rating = R.tocsc().T[j].nonzero()[1]
@@ -419,7 +427,7 @@ class Data_Factory():
         R = csr_matrix((rating, (user, item)))
 
         print("Finish preprocessing rating data - # user: %d, # item: %d, # ratings: %d" % (R.shape[0], R.shape[1], R.nnz))
-        
+
         # 1st scan user side information according to indices of users in user_side_information.dat
         user_side=[]
         raw_side=open(path_userside,'r')

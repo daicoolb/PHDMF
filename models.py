@@ -4,14 +4,20 @@ Created on July 14, 2017
 @author: Beili
 '''
 
+from __future__ import print_function
+
 import os
 import time
+import sys
 
 from util import eval_RMSE
 import math
 import numpy as np
 from text_analysis.models import CNN_module
 from text_analysis.aSDAE import aSDAE_module
+
+if sys.version_info.major == 2:
+    range = xrange
 
 
 def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
@@ -22,7 +28,7 @@ def PHDMF(res_dir, train_user, train_item, valid_user, test_user,
     a = 1
     b = 0
     aSDAE_encoder_dimension=100
-    user_feature=47
+    user_feature=aSDAE.shape[1]
 
     num_user = R.shape[0]
     num_item = R.shape[1]

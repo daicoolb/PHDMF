@@ -3,7 +3,13 @@ Created on July 14, 2017
 
 @author: Beili
 '''
+
+import sys
+
 import numpy as np
+
+if sys.version_info.major == 2:
+    range = xrange
 
 
 def eval_RMSE(R, U, V, TS):

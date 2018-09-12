@@ -2,9 +2,14 @@
 
 #coding=utf-8
 
+from __future__ import print_function
+
+import sys
+
 from evaluation import eval_precision,eval_recall
 from data_manager import Data_Factory
 import numpy as np
+
 
 data_factory=Data_Factory()
 data_path='/home/daicoolb/test_0724_0.8_amazon'
