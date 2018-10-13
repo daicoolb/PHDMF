@@ -16,8 +16,9 @@ items' latent factors, respectively. Extensive experiments for four datasets dem
 our proposed model outperforms other traditional approaches and deep learning models
 making it state of the art.
 
-if you find this model is useful for your research, please cite this [paper](http://proceedings.mlr.press/v77/liu17a/liu17a.pdf):
-- PHD: A Probabilistic Model of Hybrid Deep Collaborative Filtering for Recommender Systems
+### Note
+If you find this model is useful for your research, please cite this [paper](http://proceedings.mlr.press/v77/liu17a/liu17a.pdf):
+- PHD: A Probabilistic Model of Hybrid Deep Collaborative Filtering for Recommender Systems ACML 2017
 
 ### 1 PHD Model
 ![PHD Model](https://github.com/daicoolb/PHDMF/blob/master/PHD.png)
