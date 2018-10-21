@@ -16,6 +16,13 @@ items' latent factors, respectively. Extensive experiments for four datasets dem
 our proposed model outperforms other traditional approaches and deep learning models
 making it state of the art.
 
+### Updates
+- Many people ask about the data format about the model. Our model has two kinds of data, one is `user side information` and the other is `item side information`.
+- For `user side information`, the dataformat is `user_id::binary_value`, eg. `456::0010010000100000`
+- For `item side information`, the dataformat is `user_id::itemid::rating`, eg. `456::1::3`
+- Just see `run_asdae.py` for the process of data.
+
+
 ### Note
 If you find this model is useful for your research, please cite this [paper](http://proceedings.mlr.press/v77/liu17a/liu17a.pdf):
 - PHD: A Probabilistic Model of Hybrid Deep Collaborative Filtering for Recommender Systems ACML 2017
