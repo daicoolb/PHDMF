@@ -19,7 +19,7 @@ making it state of the art.
 ### Updates for the data format
 - Many people ask about the data format about the model. Our model has two kinds of data, one is `user side information` and the other is `item side information`.
 - For `user side information`, the dataformat is `user_id::binary_value`, eg. `456::0010010000100000`
-- For `item side information`, the dataformat is `user_id::itemid::rating`, eg. `456::1::3`
+- For `item side information`, the dataformat is `user_id::item_id::rating`, eg. `456::1::3`
 - Just see `run_test_preprocess.sh` for the process of data. Because the original data is too large, I cannot give a dowonload link.
 
 ### Updates for the use of the model
